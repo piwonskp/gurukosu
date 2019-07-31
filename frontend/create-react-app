@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+NAME=$1
+
+docker run --rm -v $(pwd):/usr/src/app node \
+    bash -c \
+        "npx create-react-app ${NAME} && \
+        mv /${NAME}/* /usr/src/app"
