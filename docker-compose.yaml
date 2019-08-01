@@ -10,6 +10,7 @@ services:
     build: backend
     volumes:
       - ./backend:/usr/src/app/
+      - ./api:/usr/src/api
     ports:
       - "5000:5000"
     environment:
@@ -21,6 +22,7 @@ services:
     build: frontend
     volumes:
       - ./frontend:/usr/src/app
+      - ./api:/usr/src/api
       - /usr/src/app/node_modules
     ports:
       - "3000:3000"

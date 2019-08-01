@@ -14,7 +14,7 @@ app.config.from_object(config.get(app.config['ENV']))
 db.init_app(app)
 ma.init_app(app)
 
-connex_app.add_api('v1/api.yaml', base_path='/api/v1')
+connex_app.add_api('v1/api.yaml')
 CORS(app, resources={
     r"/api/*": {
         "origins": [

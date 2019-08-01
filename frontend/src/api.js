@@ -1,9 +1,10 @@
-import Swagger from 'swagger-client'
+import Swagger from 'swagger-client';
+import Api from 'api'
 
 
-const API_ROOT = "https://localhost:5000/api/v1/";
+const URL = "https://localhost:5000";
 
-const api = Swagger(API_ROOT + 'openapi.json')
+const api = Swagger({spec: Api, url: URL})
 
 const measureList = (store) => api.then(client => {
     client.apis.default.gurukosu_handlers_v1_measure_list().then(
